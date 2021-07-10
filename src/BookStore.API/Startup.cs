@@ -37,7 +37,7 @@ namespace BookStore.API
 
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddCors();
+            
 
             services.AddControllers();
 
@@ -49,6 +49,10 @@ namespace BookStore.API
                     Version = "v1"
                 });
             });
+
+            services.AddCors();
+
+            services.ResolveDependencies();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,13 +69,15 @@ namespace BookStore.API
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             });
 
-            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+          
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {

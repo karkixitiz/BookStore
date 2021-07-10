@@ -29,10 +29,7 @@ namespace BookStore.Domain.Services
             return category;
         }
 
-        public void Dispose()
-        {
-            _categoryRepository?.Dispose();
-        }
+       
 
         public async Task<IEnumerable<Category>> GetAll()
         {
@@ -68,5 +65,9 @@ namespace BookStore.Domain.Services
             return category;
         }
 
+        public void Dispose()
+        {
+            _categoryRepository?.Dispose();
+        }
     }
 }

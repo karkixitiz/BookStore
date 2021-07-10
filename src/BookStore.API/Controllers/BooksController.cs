@@ -10,8 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.API.Controllers
 {
-    public class BookController : Controller
-    {
         [Route("api/[controller]")]
         public class BooksController : MainController
         {
@@ -112,5 +110,4 @@ namespace BookStore.API.Controllers
                 return Ok(_mapper.Map<IEnumerable<BookResultDto>>(books));
             }
         }
-    }
 }
