@@ -34,3 +34,4 @@ Web API Project using .NET Core 3.1 and SPA project using Angular 9
 
 ## Articles
 On the series of articles, "Creating an Application from Scratch using .NET Core and Angular", there is the explanation step by step about how this code was implemented:
+- Toaster Notification
